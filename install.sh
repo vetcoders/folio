@@ -60,17 +60,16 @@ if [ -n "${FOLIO_TARBALL:-}" ]; then
   TARBALL_URL=$FOLIO_TARBALL
   SUMS_URL=${FOLIO_SHA256SUMS:-}
   RESOLVED_TAG="local"
+elif [ "$TAG" = latest ]; then
+  TARBALL_URL="https://github.com/${REPO}/releases/latest/download/folio.tar.gz"
+  SUMS_URL="https://github.com/${REPO}/releases/latest/download/SHA256SUMS"
+  RESOLVED_TAG="latest"
 else
-  if [ "$TAG" = latest ]; then
-    RELEASE_JSON=$(api latest) || die "no GitHub release on ${REPO}"
-  else
-    RELEASE_JSON=$(api "tags/${TAG}") || die "no release ${TAG} on ${REPO}"
-  fi
-  RESOLVED_TAG=$(printf '%s' "$RELEASE_JSON" | tr ',' '\n' | sed -n 's/.*"tag_name": *"\([^"]*\)".*/\1/p' | head -1)
-  [ -n "$RESOLVED_TAG" ] || die "could not parse tag_name"
-  TARBALL_URL="https://github.com/${REPO}/releases/download/${RESOLVED_TAG}/folio.tar.gz"
-  SUMS_URL="https://github.com/${REPO}/releases/download/${RESOLVED_TAG}/SHA256SUMS"
+  TARBALL_URL="https://github.com/${REPO}/releases/download/${TAG}/folio.tar.gz"
+  SUMS_URL="https://github.com/${REPO}/releases/download/${TAG}/SHA256SUMS"
+  RESOLVED_TAG=$TAG
 fi
+
 
 TMP=$(mktemp -d)
 trap 'rm -rf "$TMP"' EXIT
@@ -116,6 +115,10 @@ if [ "$SKIP_NPM" != 1 ]; then
   need npm
   printf 'folio: npm ci in %s\n' "$PREFIX" >&2
   (cd "$PREFIX" && npm ci)
+fi
+
+if [ -f "$PREFIX/VERSION" ]; then
+  RESOLVED_TAG=$(tr -d '\n' < "$PREFIX/VERSION")
 fi
 
 printf '\nfolio %s → %s\n' "${RESOLVED_TAG:-unknown}" "$PREFIX"
