@@ -12,6 +12,5 @@ artifacts/
 *.log
 .DS_Store
 public/__grok/
-.env
-.env.*
-!.env.example
+attachments/
+*.wav

@@ -105,5 +105,14 @@ You lose the product. No PCM clock, no occurrence conservation, no Bus, no
 agent wake, unlabeled cloud egress under an “apple-live” chip, and a
 stop-path whole-file rewrite the Apple lane killed on purpose.
 
-Ship rule: **Folio owns notes. Codescribe owns speech. Join them at paste,
-then at the bus. Never at the microphone.**
+## Quality corpus (takes 01–04)
+
+`docs/corpus/codescribe-quality` is the operator read-aloud set
+(`ZADANIA_TESTOWE.txt`). Folio uses the **raw** overlay strings as lexicon
+input. A green `corpus.test.ts` means registered mis-hears rewrite to gold
+terms (`Log3` → `Loctree`, `Roosta` → `Rust`, `po zgrze SQL` → `PostgreSQL`).
+It does not mean Folio ran Whisper, admitted an occurrence, or sealed a take.
+
+The Feb 2026 `v0_7_20-stream.txt` is a Whisper-only baseline. Worse. Kept
+as archaeology, not as a target.
+
