@@ -1,7 +1,0 @@
-No to dobra. Teraz generalnie powiem parę słów, korzystając z surowej transkrypcji przez CodeScribe.
-
-Mamy już pierwsze słowo do analizy, wobec czego chcę, żebyś wziął ten plik WAV i puścił go na nasz endpoint, bo muszę mieć pewność, czy leksykon działa, więc po prostu meta mówię z dupy.
-
-loctree to aplikacja stworzona po to, aby duże bazy kodowe przestały być tajemnicą i czarną dziurą dla agentów AI.
-
-Korzystam z Rust, korzystam z Rust w wersji Toolchain 2024. W tym momencie.

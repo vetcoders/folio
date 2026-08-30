@@ -11,8 +11,9 @@ Folio is a notes canvas. Codescribe owns speech.
 - Do not open Folio's microphone while Codescribe.app is taking.
 - Do not emit `codescribe.transcript-evidence.v1`. Consume it, later.
 - Do not collapse short word repetitions; equal strings are not identity.
-- Lexicon fixtures: `docs/corpus/codescribe-quality`. Do not treat a green
-  corpus test as engine proof. It is L2 string rewrite of measured mishears.
+- `curl | sh` installs a **source tarball** (`install.sh` + `scripts/pack.sh`).
+  Never ship wavs or a fake Codescribe binary in that archive.
+
 
 
 Pinned engine map: `docs/CODESCRIBE.md` against codescribe `@ 519159d`.

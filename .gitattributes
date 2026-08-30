@@ -1,0 +1,12 @@
+# git archive / pack.sh — keep the curl|sh tarball small and honest
+attachments/ export-ignore
+*.wav export-ignore
+startup.sh export-ignore
+.node_modules.lock export-ignore
+.github_repo export-ignore
+.project_id export-ignore
+screenshots/ export-ignore
+artifacts/ export-ignore
+.grok/ export-ignore
+AGENTS.md export-ignore
+AGENTS.project.md export-ignore

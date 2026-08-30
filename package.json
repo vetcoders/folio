@@ -1,5 +1,6 @@
 {
   "name": "folio",
+  "version": "0.1.0",
   "private": true,
   "sideEffects": false,
   "type": "module",
@@ -18,6 +19,7 @@
     "check:auth": "node scripts/check-auth-invariant.mjs",
     "test": "node --test 'scripts/**/*.test.mjs' && node --experimental-strip-types --test src/lib/app-data/app-data.test.ts src/lib/auth/gate-identity.test.ts",
     "test:folio": "node --experimental-strip-types --test src/lib/codescribe/*.test.ts",
+    "pack": "sh scripts/pack.sh",
     "lint": "eslint .",
     "format": "prettier --write ."
   },

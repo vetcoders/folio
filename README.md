@@ -36,7 +36,22 @@ Transcript Bus, `DeliveryRoute`. See [docs/CODESCRIBE.md](docs/CODESCRIBE.md).
 3. **Web canvas speaking occurrence identity (later).** Same as Swift:
    `applyTranscriptProjection`. No second reducer.
 
-## Run
+## Install
+
+```bash
+curl -fsSL https://github.com/vetcoders/folio/releases/latest/download/install.sh | sh
+```
+
+Drops source into `~/folio`, verifies `sha256` against the release `SHA256SUMS`, runs `npm ci`. Override with `FOLIO_HOME`, `FOLIO_TAG`, `FOLIO_SKIP_NPM=1`. Refuses root.
+
+This is a **source tarball**, not a signed Mac app and not Codescribe. After install:
+
+```bash
+cd ~/folio && npm run dev
+```
+
+Pack it yourself from a checkout: `sh scripts/pack.sh` → `dist/folio.tar.gz`.
+
 
 This snapshot still carries Grok App Builder chrome (`scripts/with-app-env.mjs`,
 `server/middleware/grok-pwa.ts`, unused `src/lib/auth`). Product code is
