@@ -40,9 +40,21 @@ checksum() {
   fi
 }
 
-api() {
-  curl -fsSL "https://api.github.com/repos/${REPO}/releases/${1}"
+fetch() {
+  # $1 url-or-path  $2 dest
+  case "$1" in
+    /* | ./* | ../*)
+      cp "$1" "$2"
+      ;;
+    file://*)
+      cp "${1#file://}" "$2"
+      ;;
+    *)
+      curl -fsSL "$1" -o "$2"
+      ;;
+  esac
 }
+
 
 if [ -n "${FOLIO_TARBALL:-}" ]; then
   TARBALL_URL=$FOLIO_TARBALL
@@ -64,10 +76,10 @@ TMP=$(mktemp -d)
 trap 'rm -rf "$TMP"' EXIT
 
 printf 'folio: fetching %s\n' "$TARBALL_URL" >&2
-curl -fsSL "$TARBALL_URL" -o "$TMP/folio.tar.gz"
+fetch "$TARBALL_URL" "$TMP/folio.tar.gz"
 
 if [ -n "${SUMS_URL:-}" ]; then
-  curl -fsSL "$SUMS_URL" -o "$TMP/SHA256SUMS" || die "could not fetch SHA256SUMS"
+  fetch "$SUMS_URL" "$TMP/SHA256SUMS" || die "could not fetch SHA256SUMS"
   EXPECTED=$(awk '/folio\.tar\.gz$/ {print $1; exit}' "$TMP/SHA256SUMS")
   [ -n "$EXPECTED" ] || die "folio.tar.gz missing from SHA256SUMS"
   GOT=$(checksum "$TMP/folio.tar.gz")
