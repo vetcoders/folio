@@ -1,0 +1,17 @@
+node_modules/
+.vercel/
+.tanstack/
+.vite/
+dist/
+screenshots/
+artifacts/
+.grok/
+/AGENTS.md
+/AGENTS.project.md
+.project_id
+*.log
+.DS_Store
+public/__grok/
+.env
+.env.*
+!.env.example

@@ -1,0 +1,18 @@
+Folio
+Copyright 2026 Vetcoders
+
+Folio is a notes canvas. It is not the Codescribe transcription engine.
+
+Portions of `src/lib/codescribe/` (lexicon, Light+ sentence shaping, spoken
+punctuation, operator vocabulary) are derived from:
+
+    https://github.com/vetcoders/codescribe
+    branch dbxms-runtime-claude
+    commit 519159d313b2899db68e1158bd729f4d628b7a16
+
+Codescribe remains the authority for microphone, AcousticLedger, Transcript
+Bus, and delivery. See docs/CODESCRIBE.md.
+
+This snapshot was born in Grok App Builder. Platform chrome under
+`src/lib/auth`, `src/lib/app-data`, `public/__grok`, `server/`, and
+`scripts/with-app-env.mjs` is not the Folio product.
