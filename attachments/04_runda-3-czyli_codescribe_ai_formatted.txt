@@ -1,0 +1,14 @@
+Runda 3. Czyli trudne z prawdziwych mispronouncations.
+
+21. Podaje Tramadol i Alfaxon do premedykacji.  
+22. Projekt używa MLX Embeddings z PNPM-12.  
+23. Rozpoznanie mikrosporum Canis, klasyczna grzybica skórna.  
+24. Konfiguracja PMPM Tauri Dev wymaga TypeScript plus Vita.  
+25. Pacjent ma pseudociążę. Podają mettimazol.  
+26. Sprawdzam LOC przez JQ i filtruję wynik grep.  
+27. Robena coxip na ból przy przemieszczeniu rzepki.  
+28. Kubernetes skaluje gRPC endpointy z exponential bugów.  
+29. Amoksycylina z kwasem klawulanowym na zapalenie spojów.  
+30. Uruchamiam retry z cosine similarity dla embeddingów. Terminy z nagrania, które już przetestowaliśmy.
+
+LogTree Whisper jako log3 i Rust Whisper, jak roost i rusek, Codescribe CodeScribe Whisper jako CodeScrib Toolchain 2024. Współpraca z Wspólki.
